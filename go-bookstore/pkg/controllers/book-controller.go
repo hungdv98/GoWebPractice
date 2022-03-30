@@ -78,7 +78,7 @@ func UpdateBook(w http.ResponseWriter, r *http.Request) {
 		bookDetails.Publication = updateBook.Publication
 	}
 	db.Save(&bookDetails)
-	res, _ = json.Marshal(bookDetails)
+	res, _ := json.Marshal(bookDetails)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(res)
